@@ -1,4 +1,3 @@
-import LazyImage from '../components/LazyImage';
 import { useImagePreloader } from '../utils/preloader';
 import TopMarquee from '../components/TopMarquee';
 import { siteConfig } from '../config/site.config';
@@ -27,53 +26,50 @@ const Home = () => {
   }
 
   return (
-    <div className="relative min-h-screen min-h-[100dvh] overflow-hidden">
+    <div className="relative h-full min-h-screen min-h-[100dvh] overflow-hidden">
       <TopMarquee />
 
-      {/* Partner logos and brand emblems */}
-      <div className="absolute top-12 sm:top-14 right-2 sm:right-4 md:right-6 z-10 flex flex-row flex-wrap justify-end items-center gap-3 sm:gap-4 md:gap-6 max-w-[75%] sm:max-w-[60%]">
-        {brand.partnerLogos.map((logo) => (
-          <LazyImage
-            key={logo.name}
-            src={logo.src}
-            alt={`${logo.name} logo`}
-            priority
-            className="object-contain w-11 h-11 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
-          />
-        ))}
-        {brand.emblems.map((emblem) => (
-          <LazyImage
-            key={emblem.name}
-            src={emblem.src}
-            alt={`${emblem.name} emblem`}
-            priority
-            className="object-contain w-11 h-11 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
-          />
-        ))}
-      </div>
-
-      {/* Content in lower third */}
-      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28 left-4 right-4 sm:left-auto sm:right-6 md:right-10 lg:right-16 z-10">
-        <div className="flex flex-col items-start mb-4 sm:mb-6 md:mb-8">
-          <img
-            src={brand.wordmark}
-            alt={brand.wordmarkAlt}
-            className="h-auto max-w-full mb-2 sm:mb-3"
-            style={{ width: 'clamp(14rem, 55vw, 52rem)' }}
-          />
-          <p
-            className="text-foreground/80 text-base sm:text-xl md:text-2xl tracking-[0.2em] uppercase"
-            style={{ fontFamily: 'var(--brand-font-body)', fontWeight: 600 }}
-          >
-            {event.tagline}
-          </p>
+      <div className="home-hero relative z-10 flex min-h-[100dvh] w-full flex-col items-center justify-evenly px-4 text-center sm:px-6 lg:justify-center lg:px-8">
+        {/* Partner logos and brand emblems */}
+        <div className="home-hero-logos flex w-full max-w-6xl flex-wrap items-center justify-center">
+          {brand.partnerLogos.map((logo) => (
+            <img
+              key={logo.name}
+              src={logo.src}
+              alt={`${logo.name} logo`}
+              className="home-hero-logo"
+              loading="eager"
+            />
+          ))}
+          {brand.emblems.map((emblem) => (
+            <img
+              key={emblem.name}
+              src={emblem.src}
+              alt={`${emblem.name} emblem`}
+              className="home-hero-logo"
+              loading="eager"
+            />
+          ))}
         </div>
 
+        <img
+          src={brand.wordmark}
+          alt={brand.wordmarkAlt}
+          className="home-hero-wordmark"
+        />
+
+        <p
+          className="home-hero-tagline text-xl tracking-[0.18em] uppercase text-foreground/80 sm:text-2xl sm:tracking-[0.2em] md:text-3xl lg:text-4xl"
+          style={{ fontFamily: 'var(--brand-font-body)', fontWeight: 600 }}
+        >
+          {event.tagline}
+        </p>
+
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-5 sm:mb-6 md:mb-8 items-stretch sm:items-start">
+        <div className="home-hero-cta flex w-full max-w-md flex-col items-center justify-center gap-3 sm:max-w-3xl sm:flex-row sm:gap-4 md:gap-5">
           <a
             href={event.registrationUrl}
-            className="w-full sm:w-auto bg-accent text-void px-6 sm:px-10 md:px-12 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base md:text-lg text-center hover:bg-accent-hover transition-colors"
+            className="w-full rounded-lg bg-accent px-8 py-3.5 text-center text-lg text-void transition-colors hover:bg-accent-hover sm:w-auto sm:min-w-[14rem] sm:px-12 sm:py-4 sm:text-xl md:px-16 md:py-5 md:text-2xl"
             style={{ fontFamily: 'var(--brand-font-body)', fontWeight: 700 }}
           >
             Register Now
@@ -82,7 +78,7 @@ const Home = () => {
             href={event.brochureUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-white/10 text-foreground border border-line px-6 sm:px-10 md:px-12 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base md:text-lg text-center hover:bg-white/20 transition-colors"
+            className="w-full rounded-lg border border-line bg-white/10 px-8 py-3.5 text-center text-lg text-foreground transition-colors hover:bg-white/20 sm:w-auto sm:min-w-[14rem] sm:px-12 sm:py-4 sm:text-xl md:px-16 md:py-5 md:text-2xl"
             style={{ fontFamily: 'var(--brand-font-body)', fontWeight: 700 }}
           >
             Download Brochure
@@ -90,24 +86,24 @@ const Home = () => {
         </div>
 
         {/* Date and Location */}
-        <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 items-start">
-          <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-            <span className="material-icons text-foreground text-2xl align-middle" aria-hidden="true">
+        <div className="home-hero-meta flex w-full flex-col items-center justify-center gap-2.5 text-center md:flex-row md:flex-wrap md:gap-x-10 md:gap-y-3">
+          <div className="flex items-center justify-center gap-2 sm:gap-3">
+            <span className="material-icons text-2xl text-foreground sm:text-3xl md:text-4xl" aria-hidden="true">
               location_on
             </span>
             <span
-              className="text-foreground text-sm sm:text-base md:text-lg break-words text-left leading-snug"
+              className="max-w-[20rem] text-base leading-snug text-foreground sm:max-w-md sm:text-lg md:max-w-none md:text-xl lg:text-2xl"
               style={{ fontFamily: 'var(--brand-font-body)', fontWeight: 600 }}
             >
               {event.venue}
             </span>
           </div>
-          <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-            <span className="material-icons text-foreground text-2xl align-middle" aria-hidden="true">
+          <div className="flex items-center justify-center gap-2 sm:gap-3">
+            <span className="material-icons text-2xl text-foreground sm:text-3xl md:text-4xl" aria-hidden="true">
               calendar_month
             </span>
             <span
-              className="text-foreground text-sm sm:text-base md:text-lg leading-snug"
+              className="text-base leading-snug text-foreground sm:text-lg md:text-xl lg:text-2xl"
               style={{ fontFamily: 'var(--brand-font-body)', fontWeight: 600 }}
             >
               {event.dateLabel}
