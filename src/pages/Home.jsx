@@ -8,8 +8,7 @@ const { brand, theme, event } = siteConfig;
 const Home = () => {
   // Preload critical images for the Home section
   const criticalImages = [
-    theme.backgrounds.landscape.avif,
-    theme.backgrounds.portrait.avif,
+    theme.background,
     brand.wordmark,
   ];
   const { isLoading } = useImagePreloader(criticalImages);
@@ -28,44 +27,27 @@ const Home = () => {
   }
 
   return (
-    <div className="relative min-h-screen min-h-[100dvh] overflow-hidden bg-void">
+    <div className="relative min-h-screen min-h-[100dvh] overflow-hidden">
       <TopMarquee />
 
-      {/* Background image - mobile version */}
-      <picture className="absolute inset-0 sm:hidden">
-        <source srcSet={theme.backgrounds.portrait.webp} type="image/webp" />
-        <source srcSet={theme.backgrounds.portrait.avif} type="image/avif" />
-        <img
-          src={theme.backgrounds.portrait.png}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: theme.backgrounds.portrait.position }}
-        />
-      </picture>
-
-      {/* Background image - tablet/desktop version */}
-      <picture className="hidden sm:block absolute inset-0">
-        <source srcSet={theme.backgrounds.landscape.webp} type="image/webp" />
-        <source srcSet={theme.backgrounds.landscape.avif} type="image/avif" />
-        <img
-          src={theme.backgrounds.landscape.png}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: theme.backgrounds.landscape.position }}
-        />
-      </picture>
-
-      {/* Partner logos */}
-      <div className="absolute top-12 sm:top-14 right-2 sm:right-4 md:right-6 z-10 flex flex-row flex-wrap justify-end items-center gap-2 sm:gap-3 md:gap-5 max-w-[75%] sm:max-w-[60%]">
+      {/* Partner logos and brand emblems */}
+      <div className="absolute top-12 sm:top-14 right-2 sm:right-4 md:right-6 z-10 flex flex-row flex-wrap justify-end items-center gap-3 sm:gap-4 md:gap-6 max-w-[75%] sm:max-w-[60%]">
         {brand.partnerLogos.map((logo) => (
           <LazyImage
             key={logo.name}
             src={logo.src}
             alt={`${logo.name} logo`}
             priority
-            className="object-contain w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+            className="object-contain w-11 h-11 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
+          />
+        ))}
+        {brand.emblems.map((emblem) => (
+          <LazyImage
+            key={emblem.name}
+            src={emblem.src}
+            alt={`${emblem.name} emblem`}
+            priority
+            className="object-contain w-11 h-11 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
           />
         ))}
       </div>

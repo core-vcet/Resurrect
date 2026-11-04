@@ -5,10 +5,11 @@ import AdvantageSection from './pages/AdvantageSection'
 import HowToResurrectSection from './components/HowToResurrectSection'
 import TimelineSection from './components/TimelineSection'
 import ContactSection from './components/ContactSection'
+import LiquidFractal from './components/LiquidFractal'
 import LazySection from './components/LazySection'
 import { siteConfig } from './config/site.config'
 
-const { sections, brand } = siteConfig
+const { sections, brand, theme } = siteConfig
 
 function WhatIsResurrectSection() {
   const sectionRef = useRef(null)
@@ -52,11 +53,10 @@ function WhatIsResurrectSection() {
         >
           {sections.about.headingPrefix}{' '}
           <img
-            src={brand.wordmark}
+            src={brand.wordmarkInline}
             alt={brand.wordmarkAlt}
-            className="inline-block align-middle h-[0.72em] w-auto"
-          />
-          ?
+            className="inline-block align-baseline h-[0.75em] w-auto sm:h-[0.9em] md:h-[1em]"
+          />{'?'}
         </h2>
 
         {sections.about.paragraphs.map((paragraph, index) => (
@@ -111,34 +111,42 @@ function LandingPage() {
   }
 
   return (
-    <div ref={scrollContainerRef} className="h-[100dvh] overflow-y-auto scroll-smooth snap-y snap-mandatory bg-void">
+    <div ref={scrollContainerRef} className="relative h-[100dvh] overflow-y-auto scroll-smooth snap-y snap-mandatory bg-void">
+      {/* Shared full-screen background for every section */}
+      <div className="fixed inset-0 z-0">
+        <LiquidFractal
+          imageUrl={theme.background}
+          accent={theme.colors.accent}
+        />
+      </div>
+
       {/* Section 1 - Home (Load immediately, it's above the fold) */}
-      <section className="snap-start snap-always h-[100dvh] bg-void text-foreground">
+      <section className="relative z-10 snap-start snap-always h-[100dvh] text-foreground">
         <Home />
       </section>
 
       {/* Section 2 - What is Resurrect? */}
-      <LazySection className="snap-start snap-always h-[100dvh] event-section-bg text-foreground">
+      <LazySection className="relative z-10 snap-start snap-always h-[100dvh] text-foreground">
         <WhatIsResurrectSection />
       </LazySection>
 
       {/* Section 3 - The Resurrect Advantage (Lazy load when scrolling) */}
-      <LazySection className="snap-start snap-always h-[320dvh] event-section-bg text-foreground relative">
+      <LazySection className="relative z-10 snap-start snap-always h-[320dvh] text-foreground">
         <AdvantageSection scrollContainerRef={scrollContainerRef} />
       </LazySection>
 
       {/* Section 4 - How to Resurrect? (Lazy load when scrolling) */}
-      <LazySection className="snap-start snap-always h-[100dvh] event-section-bg">
+      <LazySection className="relative z-10 snap-start snap-always h-[100dvh]">
         <HowToResurrectSection />
       </LazySection>
 
       {/* Section 5 - Timeline (Lazy load when scrolling) */}
-      <LazySection className="snap-start snap-always h-[100dvh] event-section-bg">
+      <LazySection className="relative z-10 snap-start snap-always h-[100dvh]">
         <TimelineSection />
       </LazySection>
 
       {/* Section 6 - Contact & Socials (Lazy load when scrolling) */}
-      <LazySection className="snap-start snap-always h-[100dvh] event-section-bg text-foreground">
+      <LazySection className="relative z-10 snap-start snap-always h-[100dvh] text-foreground">
         <ContactSection />
       </LazySection>
 

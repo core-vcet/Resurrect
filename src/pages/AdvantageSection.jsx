@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion as Motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { siteConfig } from '../config/site.config';
 
-const { sections } = siteConfig;
+const { sections, brand } = siteConfig;
 const advantage = sections.advantage;
 const cards = advantage.cards;
 
@@ -82,7 +82,16 @@ const AdvantageSection = ({ scrollContainerRef }) => {
         >
           <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 text-foreground">
             {advantage.headingPrefix}{' '}
-            <span className="brand-accent-word text-accent">{siteConfig.brand.name}</span>{' '}
+            {advantage.headingWordmark ? (
+              <img
+                src={brand.wordmarkInline}
+                alt={brand.wordmarkAlt}
+                className="inline-block align-baseline h-[1em] w-auto"
+                style={{ position: 'relative', left: '-0.12em' }}
+              />
+            ) : (
+              <span className="brand-accent-word text-accent">{brand.name}</span>
+            )}{' '}
             {advantage.headingSuffix}
           </span>
         </Motion.h2>

@@ -166,9 +166,9 @@ const HowToResurrectSection = () => {
           {howTo.headingPrefix}{' '}
           {howTo.headingWordmark ? (
             <img
-              src={brand.wordmark}
+              src={brand.wordmarkInline}
               alt={brand.wordmarkAlt}
-              className="inline-block align-middle h-[0.72em] w-auto"
+              className="inline-block align-baseline h-[1em] w-auto"
             />
           ) : (
             <span className="brand-accent-word">{brand.name}</span>
@@ -216,6 +216,18 @@ const HowToResurrectSection = () => {
               )}
             </Fragment>
           ))}
+        </div>
+
+        <div className="rules-footer">
+          <a
+            href={howTo.templateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rules-template-link"
+          >
+            Use this template <span aria-hidden="true">→</span>
+          </a>
+          <p className="rules-note">{howTo.note}</p>
         </div>
       </section>
     </main>

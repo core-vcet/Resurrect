@@ -42,7 +42,7 @@ const LazySection = ({ children, className = '', threshold = 0.1, rootMargin = '
         children
       ) : (
         // Placeholder with same min-height to prevent layout shift
-        <div className="h-full flex items-center justify-center bg-black">
+        <div className="h-full flex items-center justify-center bg-transparent">
           <div className="text-white opacity-50">Loading section...</div>
         </div>
       )}
