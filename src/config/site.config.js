@@ -1,4 +1,4 @@
-import resurrectLogo from '../assets/resurrect-logo.png'
+import resurrectLogo from '../assets/resurrect-wordmark.png'
 import resurrectWordmarkInline from '../assets/resurrect-wordmark-inline.webp'
 import coreLogo from '../assets/partners/core_logo.png'
 import ieeeLogo from '../assets/partners/ieee_logo.png'
