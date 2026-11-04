@@ -19,7 +19,7 @@ export const useImagePreloader = (imageUrls) => {
     const totalImages = imageUrls.length;
 
     const loadImage = (url) => {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         const img = new Image();
         img.src = url;
         img.onload = () => {

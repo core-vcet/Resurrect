@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
+import { siteConfig } from "../config/site.config"
 
-const marqueeText = "Registrations for CoRE Unleashed have closed! Thank you for participating!"
+const marqueeText = siteConfig.event.marquee
 
 const MarqueeMessage = () => (
   <p className="top-marquee-message">
