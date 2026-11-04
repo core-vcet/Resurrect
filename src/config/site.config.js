@@ -1,92 +1,78 @@
 import resurrectLogo from '../assets/resurrect-logo.png'
-import backgroundPortraitPng from '../assets/background/background-portrait.png'
-import backgroundPortraitWebp from '../assets/background/background-portrait.webp'
-import backgroundPortraitAvif from '../assets/background/background-portrait.avif'
-import backgroundLandscapePng from '../assets/background/background-landscape.png'
-import backgroundLandscapeWebp from '../assets/background/background-landscape.webp'
-import backgroundLandscapeAvif from '../assets/background/background-landscape.avif'
+import resurrectWordmarkInline from '../assets/resurrect-wordmark-inline.webp'
 import coreLogo from '../assets/partners/core_logo.png'
 import ieeeLogo from '../assets/partners/ieee_logo.png'
 import vcetLogo from '../assets/partners/vcet_logo.png'
-import codezyncLogo from '../assets/partners/CodeZyng_Logo.png'
+import phoenixEmblem from '../assets/emblems/phoenix-emblem.webp'
+import crestEmblem from '../assets/emblems/segmented-crest-emblem.webp'
 
 export const siteConfig = {
   meta: {
     title: 'Resurrect',
-    description: 'Resurrect — a 36-hour innovation marathon. Rise. Build. Repeat.',
+    description:
+      'Resurrect — a two-round hybrid innovation challenge at VCET Puttur. Online idea pitch, top 30 onsite finale, 24-hour build. 27–28 November 2026.',
   },
   brand: {
     name: 'Resurrect',
     wordmark: resurrectLogo,
+    wordmarkInline: resurrectWordmarkInline,
     wordmarkAlt: 'Resurrect',
     favicon: '/resurrect-favicon.ico',
+    emblems: [
+      { name: 'Phoenix', src: phoenixEmblem },
+      { name: 'Segmented Crest', src: crestEmblem },
+    ],
     partnerLogos: [
-      { name: 'CoRE', src: coreLogo },
-      { name: 'IEEE VCET', src: ieeeLogo },
       { name: 'VCET', src: vcetLogo },
-      { name: 'CodeZyng', src: codezyncLogo },
+      { name: 'CoRE', src: coreLogo },
+      { name: 'IEEE', src: ieeeLogo },
     ],
   },
   theme: {
     colors: {
-      void: '#040207',
-      deep: '#170925',
-      plum: '#31124D',
-      violet: '#7C2EC4',
-      electric: '#9437E9',
-      accent: '#A43DFE',
-      accentSoft: '#C084FC',
-      accentHover: '#8B2FD6',
-      glow: '#B442FF',
-      foreground: '#F5F3F7',
-      muted: 'rgba(245, 243, 247, 0.72)',
-      line: 'rgba(164, 61, 254, 0.45)',
+      void: '#050505',
+      deep: '#0D0D0D',
+      plum: '#161616',
+      violet: '#242424',
+      electric: '#333333',
+      accent: '#E8E8E8',
+      accentSoft: '#F5F5F5',
+      accentHover: '#FFFFFF',
+      glow: '#FFFFFF',
+      foreground: '#F5F5F5',
+      muted: 'rgba(245, 245, 245, 0.72)',
+      line: 'rgba(245, 245, 245, 0.32)',
     },
     fonts: {
       // Font family names are injected as CSS variables at startup.
       // Add your own @font-face rules in src/assets/fonts/fonts.css and
       // reference the same family name here to swap fonts.
-      display: "'GomariceNoContinue', 'Inter', sans-serif",
-      body: "'Inter', system-ui, sans-serif",
-      accent: "'Blowbrush', 'Inter', cursive",
+      display: "'Oxanium', 'Inter', system-ui, sans-serif",
+      body: "'D-DIN', 'Inter', system-ui, sans-serif",
+      accent: "'Chakra Petch', 'Inter', system-ui, sans-serif",
     },
-    backgrounds: {
-      portrait: {
-        png: backgroundPortraitPng,
-        webp: backgroundPortraitWebp,
-        avif: backgroundPortraitAvif,
-        position: 'center',
-      },
-      landscape: {
-        png: backgroundLandscapePng,
-        webp: backgroundLandscapeWebp,
-        avif: backgroundLandscapeAvif,
-        position: 'center',
-      },
-    },
+    // Shared across every section/page and used by the liquid fractal effect.
+    background: '/BACKGROUND.png',
   },
   event: {
     name: 'Resurrect',
     tagline: 'Rise. Build. Repeat.',
-    dateLabel: '24th – 26th April 2026',
+    dateLabel: '27th – 28th November 2026',
     venue: 'Vivekananda College of Engineering & Technology, Puttur',
-    registrationUrl: '#',
-    brochureUrl: '#',
-    marquee: 'Registrations for Resurrect are now open! Grab your squad and rise.',
+    registrationUrl:
+      'https://docs.google.com/forms/d/e/1FAIpQLScsz25ZYTZmtXnnEM1D3hqx25sT-M7p0KlEsjwMsGjit_G0vg/viewform',
+    brochureUrl: '/resurrect-brochure.pdf',
+    marquee:
+      'Round 1 idea submissions close 20th November 2026 — register your squad for Resurrect!',
     prizePool: '₹50,000',
-    duration: '36 Hours',
-    partner: {
-      name: 'CodeZyng',
-      logo: codezyncLogo,
-      opportunity: 'Internship Opportunity',
-    },
+    duration: '24 Hours',
   },
   sections: {
     about: {
       headingPrefix: 'What is',
       paragraphs: [
-        'Resurrect is a high-energy innovation marathon where student developers, designers, and problem-solvers bring bold ideas back to life.',
-        'For 36 hours, teams build, break, and rebuild until they have a working product worth pitching. We provide the platform; you provide the spark.',
+        'Resurrect is a two-round hybrid innovation challenge where student developers, designers, and problem-solvers bring bold ideas back to life. Round 1 is an online idea pitch on an Open Innovation theme; submissions close 20th November 2026.',
+        'The top 30 teams advance to the onsite Grand Finale at VCET Puttur, where they build a working prototype in 24 hours and pitch it to industry judges for a ₹50,000 prize pool. Teams of 2–4 students from any college or branch can participate.',
       ],
     },
     advantage: {
@@ -97,48 +83,61 @@ export const siteConfig = {
         {
           value: '₹50,000',
           title: 'Grand Prize Pool',
-          body: 'Battle it out for exceptional rewards and recognition.',
+          body: 'Compete for the prize pool and recognition from industry judges.',
         },
         {
-          value: '36 Hours',
-          title: 'Of Pure Hustle',
-          body: 'Build non-stop to design, code, and launch your MVP.',
+          value: '24 Hours',
+          title: 'Onsite Grand Finale',
+          body: 'Build a working prototype with your team at VCET Puttur.',
         },
         {
-          value: 'CodeZyng',
-          title: 'Internship Opportunity',
-          body: 'Standout teams can unlock internship opportunities with CodeZyng.',
-          logo: codezyncLogo,
+          value: 'Goodies',
+          title: 'Exciting Goodies',
+          body: 'Exclusive swag and surprises for every finalist.',
         },
       ],
     },
     howTo: {
       headingPrefix: 'How to',
       headingWordmark: true,
+      templateUrl: 'https://drive.google.com/drive/folders/1fl1JvyrbDxur019cw7dFVn-mnSlTrke0',
+      note: 'Open to B.E/B.Tech/BCA/MCA students.',
       steps: [
-        { title: 'Form Your Squad!', body: 'Gather your most reliable teammates.' },
-        { title: 'Pick a Challenge:', body: 'Choose from the available industry problem statements.' },
-        { title: 'Build Non-Stop:', body: 'Use the full duration to code, design, and deploy.' },
-        { title: 'Pitch to the Pros:', body: 'Present your solution to a panel of industry experts.' },
+        {
+          title: 'Form Your Squad!',
+          body: 'Team up with 2–4 students from any college or branch.',
+        },
+        {
+          title: 'Pitch Your Idea:',
+          body: 'Submit an online PPT on any Open Innovation theme by 20th November 2026. Add a GitHub prototype link for brownie points.',
+        },
+        {
+          title: 'Make the Top 30:',
+          body: 'Shortlisted teams advance to the onsite Grand Finale at VCET Puttur.',
+        },
+        {
+          title: 'Build & Pitch:',
+          body: 'Create a working prototype in 24 hours and present it to the judges.',
+        },
       ],
     },
     timeline: {
       heading: 'TIMELINE',
       groups: [
         {
-          label: 'Day 1 schedule',
+          label: 'Day 1 — 27th November',
           items: [
-            { date: 'April 24th — 06:00 PM', title: 'Check-in' },
-            { date: '07:00 PM', title: 'Resurrect Inauguration' },
-            { date: '08:00 PM', title: 'Hackathon Commences' },
+            { date: 'Nov 27th — 08:00 AM', title: 'Check-in' },
+            { date: '09:00 AM', title: 'Event Inauguration' },
+            { date: '10:00 AM', title: 'Hackathon Commences' },
           ],
         },
         {
-          label: 'Day 2 schedule',
+          label: 'Day 2 — 28th November',
           items: [
-            { date: 'April 26th — 08:00 AM', title: 'Hackathon Concludes' },
-            { date: '09:00 AM', title: 'Evaluation Commences' },
-            { date: '11:00 AM', title: 'Valedictory Ceremony' },
+            { date: 'Nov 28th — 10:00 AM', title: 'Hackathon Concludes' },
+            { date: '10:30 AM', title: 'Evaluation' },
+            { date: '12:30 PM', title: 'Valedictory Ceremony' },
           ],
         },
       ],
@@ -147,14 +146,24 @@ export const siteConfig = {
     contact: {
       heading: 'Contact & Socials',
       contacts: [
-        { name: 'Event Coordinator', phone: '+91 XXXXX XXXXX', email: 'coordinator@example.com' },
-        { name: 'Technical Lead', phone: '+91 XXXXX XXXXX', email: 'tech@example.com' },
-        { name: 'PR Lead', phone: '+91 XXXXX XXXXX', email: 'pr@example.com' },
+        {
+          name: 'Srinivas Hegde M',
+          phone: '+91 90601 59605',
+          email: 'hegdesrinivasm+queries@gmail.com',
+        },
+        {
+          name: 'K Shreekrishna Upadhyaya',
+          phone: '+91 96861 08613',
+          email: 'upadhyayashreekrishna+queries@gmail.com',
+        },
       ],
       socials: [
-        { label: 'Website', href: '#', icon: 'globe' },
-        { label: 'Instagram', href: '#', icon: 'instagram' },
-        { label: 'LinkedIn', href: '#', icon: 'linkedin' },
+        { label: 'VCET Puttur', href: 'https://vcetputtur.ac.in/', icon: 'globe' },
+        {
+          label: 'Instagram',
+          href: 'https://www.instagram.com/aiml.vcet?obrf=MWZsNDNvcW5pcmsz',
+          icon: 'instagram',
+        },
       ],
       mapEmbedUrl:
         'https://www.google.com/maps?q=Vivekananda+College+of+Engineering+and+Technology+Puttur&output=embed',

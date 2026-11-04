@@ -1,21 +1,73 @@
 @font-face {
-  font-family: "GomariceNoContinue";
-  src: url("./gomarice_no_continue.woff2") format("woff2"),
-       url("./gomarice_no_continue.woff") format("woff"),
-       url("./gomarice_no_continue.ttf") format("truetype");
-  font-weight: normal;
+  font-family: 'Oxanium';
+  src: url('./oxanium-400.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Blowbrush';
-  src: url('./blowbrush.woff2') format('woff2'),
-       url('./blowbrush.woff') format('woff'),
-       url('./blowbrush.otf') format('opentype');
-  font-weight: normal;
+  font-family: 'Oxanium';
+  src: url('./oxanium-600.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oxanium';
+  src: url('./oxanium-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('./chakra-petch-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('./chakra-petch-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('./chakra-petch-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('./chakra-petch-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN';
+  src: url('./d-din-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN';
+  src: url('./d-din-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -24,7 +76,7 @@
        url('./inter-latin-400-normal.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -33,7 +85,7 @@
        url('./inter-latin-500-normal.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -42,7 +94,7 @@
        url('./inter-latin-600-normal.woff') format('woff');
   font-weight: 600;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -51,6 +103,5 @@
        url('./inter-latin-700-normal.woff') format('woff');
   font-weight: 700;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
-

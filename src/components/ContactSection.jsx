@@ -11,9 +11,6 @@ const socialIcons = {
   instagram: (
     <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5A3.95 3.95 0 0 0 7.75 20.2h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2Zm0 1.8A3 3 0 1 0 15 12a3 3 0 0 0-3-3Z" />
   ),
-  linkedin: (
-    <path d="M4.98 3.5A2.48 2.48 0 1 1 4.98 8.46a2.48 2.48 0 0 1 0-4.96ZM2.75 9.74h4.46V21.5H2.75V9.74Zm7.08 0h4.28v1.6h.06c.6-1.13 2.05-2.32 4.22-2.32 4.52 0 5.36 2.97 5.36 6.83v5.65h-4.46v-5c0-1.2-.02-2.75-1.68-2.75-1.69 0-1.95 1.31-1.95 2.66v5.09H9.83V9.74Z" />
-  ),
 }
 
 const ContactSection = () => {
@@ -61,7 +58,7 @@ const ContactSection = () => {
 
         <div className="section6-scroll flex-1 min-h-0 overflow-y-auto flex flex-col gap-3 sm:gap-5 pr-1">
           <div className="rounded-xl border border-line bg-black/25 p-3 sm:p-5 md:p-6 section6-card section6-card-1">
-            <div className="grid gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3" style={{ fontFamily: 'var(--brand-font-body)' }}>
+            <div className="grid gap-3 sm:gap-5 sm:grid-cols-2" style={{ fontFamily: 'var(--brand-font-body)' }}>
               {contact.contacts.map((person, index) => (
                 <div
                   key={person.name}
@@ -108,12 +105,12 @@ const ContactSection = () => {
             ))}
           </div>
 
-          <div className="mt-auto min-h-[220px] md:min-h-[260px]" style={{ fontFamily: 'var(--brand-font-body)' }}>
-            <div className="rounded-xl border border-line bg-black/25 p-2 sm:p-3 section6-card overflow-hidden">
+          <div className="flex-1 min-h-[240px] sm:min-h-[280px] md:min-h-[320px]" style={{ fontFamily: 'var(--brand-font-body)' }}>
+            <div className="h-full rounded-xl border border-line bg-black/25 p-2 sm:p-3 section6-card overflow-hidden">
               <iframe
                 title={contact.mapTitle}
                 src={contact.mapEmbedUrl}
-                className="w-full h-full min-h-[200px] rounded-lg border-0"
+                className="w-full h-full min-h-[220px] sm:min-h-[260px] md:min-h-[300px] rounded-lg border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
