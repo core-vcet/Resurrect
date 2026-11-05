@@ -148,12 +148,24 @@ img {
 
 .home-hero-logos {
   gap: clamp(0.4rem, 1.5vw, 2rem);
+  margin-bottom: clamp(0.75rem, 2.5vh, 2rem);
 }
 
 .home-hero-logo {
   width: clamp(3.25rem, min(15vw, 22vh), 12rem);
   height: clamp(3.25rem, min(15vw, 22vh), 12rem);
   object-fit: contain;
+}
+
+/* VCET sits in the middle slot and is lifted slightly above the rest */
+.home-hero-logo--featured {
+  transform: translateY(clamp(-1.5rem, -2.5vh, -0.5rem));
+}
+
+@media (max-width: 640px) {
+  .home-hero-logo--featured {
+    transform: translateY(clamp(-0.75rem, -1.5vh, -0.25rem));
+  }
 }
 
 .home-hero-wordmark {
