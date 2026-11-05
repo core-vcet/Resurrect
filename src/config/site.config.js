@@ -23,9 +23,9 @@ export const siteConfig = {
       { name: 'Segmented Crest', src: crestEmblem },
     ],
     partnerLogos: [
-      { name: 'VCET', src: vcetLogo },
       { name: 'CoRE', src: coreLogo },
       { name: 'IEEE', src: ieeeLogo },
+      { name: 'VCET', src: vcetLogo, featured: true },
     ],
   },
   theme: {
@@ -61,7 +61,8 @@ export const siteConfig = {
     venue: 'Vivekananda College of Engineering & Technology, Puttur',
     registrationUrl:
       'https://docs.google.com/forms/d/e/1FAIpQLScsz25ZYTZmtXnnEM1D3hqx25sT-M7p0KlEsjwMsGjit_G0vg/viewform',
-    brochureUrl: '/resurrect-brochure.pdf',
+    brochureUrl:
+      'https://drive.google.com/file/d/1lWvVHUIQTF0higPGxjHZENTcGBr97_d8/view?usp=sharing',
     marquee:
       'Round 1 idea submissions close 20th November 2026 — register your squad for Resurrect!',
     prizePool: '₹50,000',

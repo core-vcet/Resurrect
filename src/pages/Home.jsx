@@ -37,7 +37,7 @@ const Home = () => {
               key={logo.name}
               src={logo.src}
               alt={`${logo.name} logo`}
-              className="home-hero-logo"
+              className={`home-hero-logo${logo.featured ? ' home-hero-logo--featured' : ''}`}
               loading="eager"
             />
           ))}
